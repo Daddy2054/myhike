@@ -11,6 +11,7 @@ struct CardView: View {
     //  mark: properties
     @State private var imageNumber:  Int = 1
     @State private var randomNumber:  Int = 1
+    @State private var isShowingSheet: Bool = false
     
     // functions
     func randomImage() {
@@ -36,11 +37,15 @@ struct CardView: View {
                         Button
                         {// action show a sheeet
                             print("show sheet")
+                            isShowingSheet.toggle()
                         }
                         label: {
                             CustomButtonView()
-                            
-                            
+                        }
+                        .sheet(isPresented: $isShowingSheet ){
+                            SettingsView()
+                                .presentationDragIndicator(.visible)
+                                .presentationDetents([.medium, .large])
                         }
                     }
                     Text("Fun  and enjoyable outdoor activities for all ages")
