@@ -53,8 +53,36 @@ struct SettingsView: View {
             // MARK: - SECTION: ICONS
             
             // MARK: - SECTION: ABOUT
+            Section(header: Text("ABOUT THE APP"),
+                    footer: HStack {
+                Spacer()
+                Text("Copyright © 2035 Laurel Trails")
+                Spacer()
+            }
+                    
+                .padding(.vertical,8)
+            ) {
+                // 1. Basic Labeled Content
+//                LabeledContent("Application",value: "Hike")
+                
+                // 2. Advanced Labeled Content
+                CustomListRowView(rowLabel:"Application", rowIcon: "apps.iphone", rowContent: "HIKE", rowTintColor: .blue)
+                
+                CustomListRowView(rowLabel: "Compatibility", rowIcon: "info.circle", rowContent: "iOS 13.0 and above", rowTintColor: .red                )
+                
+                CustomListRowView(rowLabel: "Technology", rowIcon: "swift", rowContent: "SwiftUI", rowTintColor: .orange)
+                
+                CustomListRowView(rowLabel: "Version", rowIcon: "gearshape", rowContent: "1.0.0", rowTintColor: .purple)
+                
+                CustomListRowView(rowLabel: "Developer", rowIcon: "ellipsis.curlybraces", rowContent: "John Doe", rowTintColor: .mint)
+                
+                CustomListRowView(rowLabel: "License", rowIcon: "lock", rowContent: "MIT", rowTintColor: .green)
+                CustomListRowView(rowLabel: "Website", rowIcon: "globe", rowContent: nil, rowTintColor: .indigo, rowLinkLabel: "Dummy Academy", rowLinkDestination: "http://www.example.com")
+        
+            } //: SECTION
+            
         } //: LIST
-  
+        
     }
 }
 
